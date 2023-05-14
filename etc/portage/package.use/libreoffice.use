@@ -1,0 +1,15 @@
+# ========= LIBREOFFICE ===============
+app-office/libroffice -bluetooth -googledrive -mariadb -base -offlinehelp
+app-office/libroffice-bin -bluetooth -googledrive -mariadb -base
+
+media-libs/harfbuzz icu
+dev-libs/xmlsec nss
+
+# note: nls needed on boost for libreoffice-bin
+#       can be removed if regular libreoffice
+dev-libs/boost nls -numpy
+
+media-libs/raptor -curl
+
+dev-libs/rasqal crypt -gmp -mhash -pcre -xml
+dev-libs/redland -berkdb -iodbc -mysql -odbc -postgres -sqlite

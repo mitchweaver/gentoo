@@ -1,0 +1,62 @@
+# ===============================================
+# OpenRC/elogind instead of systemd
+# ===============================================
+gnome-base/gnome-control-center elogind -systemd -gnome-online-accounts
+sys-apps/accountsservice elogind -systemd
+gnome-base/gdm wayland elogind -systemd -audit -fprint -plymouth
+# this needs wacom and colord really annoying
+# may be able to get rid of after the ruby31 change?
+gnome-base/gnome-settings-daemon elogind input_devices_wacom colord -systemd
+
+# ===============================================
+# mutter
+# ===============================================
+x11-wm/mutter wayland udev gnome elogind -systemd -wacom
+dev-libs/libusb udev
+virtual/libusb udev
+dev-libs/libportal gtk
+media-libs/libcanberra -pulseaudio
+media-libs/clutter egl
+media-libs/cogl gles2
+
+# ===============================================
+# base
+# ===============================================
+gnome-base/gnome-light wayland gnome-shell
+gnome-base/gnome wayland gnome-keyring -gnome-online-accounts
+gnome-base/gnome-keyring -ssh-agent
+gnome-base/gnome-shell wayland -ibus
+gnome-base/gvfs -gnome-online-accounts
+x11-terms/gnome-terminal -nautilus
+
+### NOTICE: PREVIEWER === NEEDS WEBKIT-GTK
+gnome-base/nautilus gstreamer -previewer -sendto
+
+# ===============================================
+# shell extensions
+# ===============================================
+x11-misc/gpaste gnome
+
+# ===============================================
+# themes
+# ===============================================
+x11-themes/arc-theme gnome-shell
+
+# ===============================================
+# misc
+# ===============================================
+media-video/ffmpegthumbnailer gnome gtk
+
+# ===============================================
+# crap
+# ===============================================
+gnome-extra/gnome-contacts -gnome-online-accounts
+gnome-extra/evolution-data-server -gtk -introspection -weather -gnome-online-accounts
+net-wireless/gnome-bluetooth -sendto
+app-arch/gnome-autoar -gtk -introspection
+media-fonts/cantarell font_types_otf -X
+dev-libs/gjs -readline
+dev-libs/gdata -gnome-online-accounts
+
+##################app-i18n/ibus vala
+##################dev-libs/appstream vala
