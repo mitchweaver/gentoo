@@ -6,4 +6,7 @@ CPU_USE_FLAGS="aes avx avx2 f16c fma3 mmx mmxext pclmul popcnt rdrand sse sse2 s
 VIDEO_CARDS="intel"
 INPUT_DEVICES="libinput"
 
+GRUB_PLATFORMS="efi-64"
+ACCEPT_KEYWORDS="~amd64"
+
 # vim:ft=config

@@ -1,3 +1,10 @@
+# ========= WAYLAND LIBS ==============
 dev-libs/wayland abi_x86_32
 dev-qt/qtgui egl
-gui-libs/wlroots tinywl
+
+# =========== SWAY ============================
+# needs policykit for seatd
+sys-auth/elogind policykit
+gui-libs/wlroots tinywl x11
+gui-wm/sway tray swaybar grimshot -swaynag -wallpapers
+gui-apps/grim jpeg
