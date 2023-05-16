@@ -25,8 +25,8 @@ add \
     gnome-extra/extension-manager \
     media-gfx/gnome-screenshot
 
-add \
-    x11-misc/gpaste
+# add \
+#     x11-misc/gpaste
 
 add \
     gui-libs/display-manager-init
@@ -40,10 +40,10 @@ add \
     gnome-extra/gnome-shell-extension-bluetooth-quick-connect \
     gnome-extra/gnome-shell-frippery
 
-eselect repository enable 4nykey
-emerge --sync 4nykey
-add \
-    gnome-extra/gnome-shell-extension-openweather
+# eselect repository enable 4nykey
+# emerge --sync 4nykey
+# add \
+#     gnome-extra/gnome-shell-extension-openweather
 
 # -------------------------------
 # After install

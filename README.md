@@ -7,6 +7,8 @@ Mitch Weaver's Gentoo files
 * package.use, used with hardened profile
 * kernel configs
 * install encrypted ZFS + properly setup GentooLTO without issues
+* musl-hardened patches/workarounds for GentooLTO
+* Stuff for Gentoo on M1 Asahi Linux / general aarch64 shenanigans
 
 More info to come as I clean this up to make it more presentable.
 

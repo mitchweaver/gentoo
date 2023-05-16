@@ -33,25 +33,35 @@ one root data pool, encrypted
 
 Step 1: Create 1g vfat partitions at the start of each disk 1 to act as EFI partition
 
-We create this giving 4M of free space at the front
-
 ```
 fdisk /dev/nvme0n1
 g === create GPT scheme
 n
-p
-2048
-+1024M
++550M
 t, 1 ==== set to EFI type
 ```
 
-Step 2: Create 5GiB of space for boot pool
+Step 2: Create 1GiB of space for boot pool
 
 ```
 n
-p
 enter
-+5120M
++1024M
+```
+
+Step 2.5: If not using ZFS swap
+
+Create swap partition
+
+```
+n
++whatever size
+t
+19 (swap)
+```
+then
+```
+mkswap /dev/nvme0n1p3
 ```
 
 Step 3: Fill the rest of the disk with a 2nd partition to be used with ZFS
@@ -59,6 +69,8 @@ Step 3: Fill the rest of the disk with a 2nd partition to be used with ZFS
 Repeat these steps on the two other disks
 
 ## Create the ZFS pools
+
+Notice: You may need to `modprobe zfs`
 
 ### Boot pool
 
@@ -118,8 +130,8 @@ zpool create -f \
 
 turn on autotrim on root pool
 ```
-# NOTE: do not set autotrim on boot pool!
 zpool set autotrim=on rpool
+zpool set autotrim=on bpool
 ```
 
 ## Create ZFS Datasets
@@ -150,7 +162,9 @@ mkdir -p /mnt/gentoo/boot/efi
 mount /dev/nvme0n1p1 /mnt/gentoo/boot/efi
 ```
 
-## Create zswap
+## Create zswap (if using ZFS swap)
+
+Please note this is unstable and NOT recommended.
 
 see: https://openzfs.github.io/openzfs-docs/Project%20and%20Community/FAQ.html#using-a-zvol-for-a-swap-device-on-linux
 
