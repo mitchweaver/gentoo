@@ -1,0 +1,12 @@
+# Enable buffer overflow checks.
+# see: http://access.redhat.com/blogs/766093/posts/1976213
+#
+# note: this causes a few packages to fail compile
+#       see env/no-fortify-source.conf
+#
+# NOTE: This is unavailable for musl-libc, which has its own substitute.
+#       So only include this if you are NOT using musl.
+# see: https://wiki.musl-libc.org/open-issues.html#Substitute-for-%3Ccode%3E_FORTIFY_SOURCE%3C/code%3E
+COMMON_FLAGS_HARDENING="$COMMON_FLAGS_HARDENING -D_FORTIFY_SOURCE=2"
+
+# vim:ft=config

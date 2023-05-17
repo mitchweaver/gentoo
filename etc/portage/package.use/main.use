@@ -3,11 +3,9 @@
 sys-devel/clang -extra -xml -static-analyzer
 sys-devel/llvm abi_x86_32
 
-# woeusb-ng
-x11-libs/wxGTK gstreamer
+dev-lang/perl minimal
 
 net-misc/nextcloud-client -dolphin -nautilus
-x11-misc/slop -opengl
 sys-libs/compiler-rt-sanitizers profile
 sys-apps/smartmontools -daemon -update-drivedb -caps
 
@@ -31,7 +29,7 @@ x11-misc/lightdm non-root
 app-crypt/gcr gtk -vala
 
 # note: python failing to compile with -hardened
-dev-lang/python tk xml -bluetooth -hardened
+dev-lang/python xml -tk -bluetooth -hardened
 
 dev-libs/liborcus -spreadsheet-model
 

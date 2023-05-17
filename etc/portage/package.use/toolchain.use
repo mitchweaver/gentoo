@@ -1,0 +1,3 @@
+# built-in to hardened profile: default-stack-clash-protection default-znow ssp
+sys-devel/gcc plugins graphite
+sys-devel/binutils plugins

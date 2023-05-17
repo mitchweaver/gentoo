@@ -3,3 +3,8 @@ net-dns/avahi python
 net-print/hplip pdf minimal
 net-print/hplip-plugin pdf -orblite
 dev-qt/qtmultimedia widgets
+
+# ----------------------------------
+net-print/cups-filters pdf foomatic
+#####jpeg png 
+# ----------------------------------

@@ -13,4 +13,7 @@ dev-qt/qtgui X
 dev-cpp/cairomm X
 
 # ==========================================
+# Applications
+# ==========================================
 x11-misc/xwallpaper jpeg png
+x11-misc/slop -opengl

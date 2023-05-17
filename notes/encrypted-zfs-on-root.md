@@ -248,6 +248,7 @@ emerge --noreplace --ask --verbose --newuse --update \
 #       6.3.0+ not yet supported
 
 # NOTE THIS WILL FAIL BECAUSE NO KERNEL BUILT YET FOR ZFS!
+# just emerge it all down until grub which will fail, get the deps
 emerge --noreplace --ask --verbose --newuse --update \
   sys-boot/grub
 
@@ -255,7 +256,7 @@ cd /usr/src
 ln -s $PWD/whatever linux
 cd linux
 # (copy your kernel config now if you have one)
-# Notice we only make the kernel here and are not requesting --zfs
+# Notice we only make the kernel here and are not requesting --zfs yet
 genkernel \
   --no-clean --no-mrproper --oldconfig \
   --menuconfig --makeopts=-j$(nproc) \
@@ -340,14 +341,20 @@ dont forget this :p
 > -------------- HELPERS -----------------
 > ```
 > EFI_DISK=/dev/nvme0n1p1
-
+> modprobe zfs
 > zpool import rpool
 > zpool import bpool
 > zfs load-key rpool/gentoo
+
+> # note: make sure to undo this
+> zfs set mountpoint=legacy rpool/gentoo/root
 > mount.zfs rpool/gentoo/root /mnt/gentoo
+
 > mount.zfs rpool/gentoo/var /mnt/gentoo/var
 > mount.zfs bpool/gentoo/root /mnt/gentoo/boot
+
 > mount $EFI_DISK /mnt/gentoo/boot/efi
+
 > mount -t proc proc /mnt/gentoo/proc
 > mount --rbind /sys /mnt/gentoo/sys
 > mount --rbind /dev /mnt/gentoo/dev

@@ -8,5 +8,6 @@ INPUT_DEVICES="libinput"
 
 GRUB_PLATFORMS="efi-64"
 ACCEPT_KEYWORDS="~amd64"
+CHOST="x86_64-gentoo-linux-musl"
 
 # vim:ft=config

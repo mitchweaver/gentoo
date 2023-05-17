@@ -8,5 +8,6 @@ CPU_USE_FLAGS="aes avx avx2 f16c fma3 mmx mmxext pclmul popcnt rdrand sha sse ss
 
 GRUB_PLATFORMS="efi-64"
 ACCEPT_KEYWORDS="~amd64"
+CHOST="x86_64-gentoo-linux-musl"
 
 # vim:ft=config

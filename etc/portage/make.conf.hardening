@@ -41,28 +41,25 @@ COMMON_FLAGS_HARDENING="$COMMON_FLAGS_HARDENING -fcf-protection=full"
 # see: http://tk-blog.blogspot.com/2009/02/relro-not-so-well-known-memory.html
 COMMON_FLAGS_HARDENING="$COMMON_FLAGS_HARDENING -Wl,-z,relro,-z,now"
 
+# Enable bounds checking for strings as well as null pointer checks.
+# see: http://gcc.gnu.org/onlinedocs/libstdc++/manual/using_macros.html
+CXXFLAGS="$CXXFLAGS -D_GLIBCXX_ASSERTIONS"
+
 # Reject undefined symbols at link time and forbid underlinking.
 # Many attacks rely on taking control of these undefined symbols.
 #
 # This also allows you to see errors during the build
 # rather than pushing a bug to occur at run time.
 #
-# see: http://bugzilla.mozilla.org/show_bug.cgi?id=333640
+# see: https://wiki.gentoo.org/wiki/Project:Quality_Assurance/-Wl,-z,defs_and_-Wl,--no-allow-shlib-undefined
 # see: http://wiki.rosalab.ru/ru/index.php/Underlinking#Why_underlinking_is_bad
-#
-# NOTE: this seems to break a few python packages, looking into
-#       pycairo/numpy so far failing to link if this is enabled
+# see: http://bugzilla.mozilla.org/show_bug.cgi?id=333640
 COMMON_FLAGS_HARDENING="$COMMON_FLAGS_HARDENING -Wl,-z,defs"
 
-# Enable buffer overflow checks.
-# see: http://access.redhat.com/blogs/766093/posts/1976213
+# treat any undefined symbols in shared libraries linked in as errors
+# WARNING: more exprimental than -z,defs will cause more breakage
 #
-# note: this causes a few packages to fail compile
-#       see env/no-fortify-source.conf
-COMMON_FLAGS_HARDENING="$COMMON_FLAGS_HARDENING -D_FORTIFY_SOURCE=2"
-
-# Enable bounds checking for strings as well as null pointer checks.
-# see: http://gcc.gnu.org/onlinedocs/libstdc++/manual/using_macros.html
-CXXFLAGS="$CXXFLAGS -D_GLIBCXX_ASSERTIONS"
+# see: https://wiki.gentoo.org/wiki/Project:Quality_Assurance/-Wl,-z,defs_and_-Wl,--no-allow-shlib-undefined
+####################COMMON_FLAGS_HARDENING="$COMMON_FLAGS_HARDENING -Wl,--no-allow-shlib-undefined"
 
 # vim:ft=config

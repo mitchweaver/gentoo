@@ -1,3 +1,9 @@
+# ======== Proprietary ===================
+net-im/discord-bin **
+media-sound/spotify **
+
+# ===== Themes / Fonts ===================
 x11-themes/paper-gtk-theme **
 x11-themes/paper-icon-theme **
-net-im/discord **
+
+# ====== musl-libc workarounds ===========

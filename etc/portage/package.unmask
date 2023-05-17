@@ -1,18 +1,15 @@
+# ========== Proprietary =========================
 media-sound/spotify
 net-im/discord-bin
-
-# borked package for gwe
-dev-python/Rx
-
 x11-drivers/nvidia-drivers
-
-# ================================================
-# GIT VERSION (-9999) UNMASKS
-# ================================================
 
 # ================================================
 # OVERLAY UNMASKS (see package.mask)
 # ================================================
+
+# if using musl overlay, allow all
+*/*::musl
+
 media-fonts/cozette::robertgzr
 media-fonts/spleen::src_prepare-overlay
 
