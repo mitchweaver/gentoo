@@ -6,7 +6,7 @@ CPU_USE_FLAGS="edsp neon thumb vfp vfpv3 vfpv4 vfp-d32 aes sha1 sha2 crc32 v4 v5
 
 # no need to specify these, packages are patched
 # for M1 via https://github.com/chadmed/asahi-overlay
-#####VIDEO_CARDS=""
+VIDEO_CARDS="asahi"
 #####INPUT_DEVICES=""
 
 GRUB_PLATFORMS="efi-64"
