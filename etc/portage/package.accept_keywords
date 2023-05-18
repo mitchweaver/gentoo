@@ -3,27 +3,27 @@ net-im/discord::gentoo **
 media-sound/spotify::gentoo **
 
 # ======= kernel stuff ===================
-sys-kernel/gentoo-sources::gentoo ~amd64
-sys-kernel/zen-sources::gentoo ~amd64
-sys-fs/zfs::gentoo ~amd64
-sys-fs/zfs-kmod::gentoo ~amd64
+sys-kernel/gentoo-sources::gentoo ~amd64 ~arm64
+sys-kernel/zen-sources::gentoo ~amd64 ~arm64
+sys-fs/zfs::gentoo ~amd64 ~arm64
+sys-fs/zfs-kmod::gentoo ~amd64 ~arm64
 
 # ====== musl-libc workarounds ===========
-*/*::musl ~amd64
+*/*::musl ~amd64 ~arm64
 
 # ===== stuff I need most up to date ===========
-sys-config/ltoize::lto-overlay ~amd64
-app-shells/oksh::mitchw ~amd64
-www-apps/hugo::gentoo ~amd64
-net-wireless/bluez-tools::gentoo ~amd64
-media-sound/bluez-alsa::gentoo ~amd64
+sys-config/ltoize::lto-overlay ~amd64 ~arm64
+app-shells/oksh::mitchw ~amd64 ~arm64
+www-apps/hugo::gentoo ~amd64 ~arm64
+net-wireless/bluez-tools::gentoo ~amd64 ~arm64
+media-sound/bluez-alsa::gentoo ~amd64 ~arm64
 
 # ============ browsers =====================
-www-client/librewolf::librewolf ~amd64
-www-client/librewolf-bin::librewolf ~amd64
-www-client/firefox::gentoo  ~amd64
-www-client/firefox-bin::gentoo  ~amd64
-dev-libs/nss::gentoo ~amd64
+www-client/librewolf::librewolf ~amd64 ~arm64
+www-client/librewolf-bin::librewolf ~amd64 ~arm64
+www-client/firefox::gentoo  ~amd64 ~arm64
+www-client/firefox-bin::gentoo  ~amd64 ~arm64
+dev-libs/nss::gentoo ~amd64 ~arm64
 
 # ===== Themes / Fonts ===================
 x11-themes/paper-gtk-theme::tastytea **
