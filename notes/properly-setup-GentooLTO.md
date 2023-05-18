@@ -36,7 +36,7 @@ emerge --search gcc
 # (note: the change comes from ltoize, notice we are requesting
 #        -lto -pgo flags here, this is because we can't use them yet)
 mkdir -p /var/tmp/notmpfs
-CFLAGS="-O2 -pipe" USE="-lto -pgo graphite" emerge -av -1 =sys-devel-gcc-${GCC_VERSION}
+CFLAGS="-O2 -pipe" USE="-lto -pgo graphite" emerge -av -1 =sys-devel/gcc-${GCC_VERSION}
 
 # rebuild libtool
 emerge --oneshot libtool
@@ -46,7 +46,7 @@ emerge --depclean
 
 # rebuild gcc, now with lto/pgo/graphite on itself
 # warning: this will take ages
-emerge -av --newuse --oneshot =sys-devel-gcc-${GCC_VERSION}
+emerge -av --newuse --oneshot =sys-devel/gcc-${GCC_VERSION}
 
 # rebuild libtool again
 emerge -av --oneshot libtool
