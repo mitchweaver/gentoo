@@ -10,7 +10,11 @@ app-text/pandoc
 # =========================================================
 # MUSL LIBC WORKAROUNDS
 # =========================================================
+# most stable bug-free version as of 05.17.23
+>sys-devel/gcc-12.2.1_p20230428-r1
 
+# force usage of older elogind that is patched from the musl overlay
+sys-auth/elogind::gentoo
 
 # ============ OVERLAY MASKS ==============================
 # Note: for reason why I do this,
@@ -37,3 +41,4 @@ app-text/pandoc
 */*::src_prepare-overlay
 # ==========================================================
 
+# vim:ft=config

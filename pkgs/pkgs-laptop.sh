@@ -10,7 +10,7 @@ add() {
 add \
     net-wireless/iw \
     net-wireless/wireless-tools \
-    net-wireless/wpa_supplicant \
+    net-wireless/wpa_supplicant
 
 # ===============================================================================
 # keyboard backlighting

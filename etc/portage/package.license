@@ -9,3 +9,5 @@ games-util/steam-launcher ValveSteamLicense
 games-server/steamcmd Steam
 net-misc/teamviewer TeamViewer
 net-print/hplip-plugin hplip-plugin
+
+# vim:ft=config

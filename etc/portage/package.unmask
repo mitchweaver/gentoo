@@ -21,6 +21,7 @@ gnome-extra/gnome-shell-extension-openweather::4nykey
 x11-themes/papirus-icon-theme::4nykey
 
 x11-themes/paper-icon-theme::tastytea
+x11-themes/paper-gtk-theme::tastytea
 
 x11-themes/materia-theme::edgets
 net-libs/nodejs-bin::broverlay
@@ -31,3 +32,5 @@ app-misc/anki-bin::guru
 x11-misc/i3lock-fancy-rapid::guru
 app-office/joplin-bin::guru
 x11-misc/xbanish::guru
+
+# vim:ft=config

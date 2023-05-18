@@ -1,2 +1,3 @@
-sys-libs/libxcrypt headers-only system
-sys-libs/musl -crypt
+#######sys-libs/libxcrypt headers-only system
+#sys-libs/musl -crypt
+#####sys-libs/musl crypt

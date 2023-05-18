@@ -1,9 +1,32 @@
 # ======== Proprietary ===================
-net-im/discord-bin **
-media-sound/spotify **
+net-im/discord::gentoo **
+media-sound/spotify::gentoo **
 
-# ===== Themes / Fonts ===================
-x11-themes/paper-gtk-theme **
-x11-themes/paper-icon-theme **
+# ======= kernel stuff ===================
+sys-kernel/gentoo-sources::gentoo ~amd64
+sys-kernel/zen-sources::gentoo ~amd64
+sys-fs/zfs::gentoo ~amd64
+sys-fs/zfs-kmod::gentoo ~amd64
 
 # ====== musl-libc workarounds ===========
+*/*::musl ~amd64
+
+# ===== stuff I need most up to date ===========
+sys-config/ltoize::lto-overlay ~amd64
+app-shells/oksh::mitchw ~amd64
+www-apps/hugo::gentoo ~amd64
+net-wireless/bluez-tools::gentoo ~amd64
+media-sound/bluez-alsa::gentoo ~amd64
+
+# ============ browsers =====================
+www-client/librewolf::librewolf ~amd64
+www-client/librewolf-bin::librewolf ~amd64
+www-client/firefox::gentoo  ~amd64
+www-client/firefox-bin::gentoo  ~amd64
+dev-libs/nss::gentoo ~amd64
+
+# ===== Themes / Fonts ===================
+x11-themes/paper-gtk-theme::tastytea **
+x11-themes/paper-icon-theme::tastytea **
+
+# vim:ft=config

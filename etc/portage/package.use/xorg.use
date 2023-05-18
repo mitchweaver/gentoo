@@ -9,7 +9,6 @@ sys-auth/pambase elogind
 x11-libs/cairo X
 x11-libs/gtk X
 x11-libs/gtk+ X
-dev-qt/qtgui X
 dev-cpp/cairomm X
 
 # ==========================================
