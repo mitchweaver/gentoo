@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/sh -e
 
 add() {
     emerge --verbose --noreplace "$@"
@@ -7,5 +7,7 @@ add() {
 add \
     gui-wm/sway \
     gui-apps/grim \
-    gui-apps/slurp \
-    gui-apps/wl-clipboard
+    gui-apps/slurp
+
+
+# gui-apps/wl-clipboard

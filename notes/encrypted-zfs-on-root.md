@@ -270,14 +270,13 @@ genkernel \
 ```
 
 now that we have *some* kernel, we can build the zfs module
+
 ```
-emerge --noreplace --ask --verbose --newuse --update \
-    sys-boot/grub \
-    sys-fs/zfs \
-    sys-fs/zfs-kmod
+emerge --noreplace -av --newuse --update sys-boot/grub
 ```
 
 and now we build our actual kernel, using that module
+
 ```
 genkernel \
   --no-clean --no-mrproper --oldconfig \
@@ -288,7 +287,6 @@ genkernel \
   --no-mdadm \
   --no-lvm \
   --zfs \
-  --menuconfig \
   --no-mountboot \
   all
 ```
@@ -340,22 +338,22 @@ dont forget this :p
 
 > -------------- HELPERS -----------------
 > ```
-> EFI_DISK=/dev/nvme0n1p1
-> modprobe zfs
-> zpool import rpool
-> zpool import bpool
-> zfs load-key rpool/gentoo
+EFI_DISK=/dev/nvme0n1p1
+modprobe zfs
+zpool import rpool
+zpool import bpool
+zfs load-key rpool/gentoo
 
-> # note: make sure to undo this
-> zfs set mountpoint=legacy rpool/gentoo/root
-> mount.zfs rpool/gentoo/root /mnt/gentoo
+# note: make sure to undo this
+zfs set mountpoint=legacy rpool/gentoo/root
+mount.zfs rpool/gentoo/root /mnt/gentoo
 
-> mount.zfs rpool/gentoo/var /mnt/gentoo/var
-> mount.zfs bpool/gentoo/root /mnt/gentoo/boot
+mount.zfs rpool/gentoo/var /mnt/gentoo/var
+mount.zfs bpool/gentoo/root /mnt/gentoo/boot
 
-> mount $EFI_DISK /mnt/gentoo/boot/efi
+mount $EFI_DISK /mnt/gentoo/boot/efi
 
-> mount -t proc proc /mnt/gentoo/proc
-> mount --rbind /sys /mnt/gentoo/sys
-> mount --rbind /dev /mnt/gentoo/dev
+mount -t proc proc /mnt/gentoo/proc
+mount --rbind /sys /mnt/gentoo/sys
+mount --rbind /dev /mnt/gentoo/dev
 > ```

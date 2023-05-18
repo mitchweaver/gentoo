@@ -1,46 +1,44 @@
-#!/bin/sh
+#!/bin/sh -e
 
 add() {
     emerge --verbose --noreplace "$@"
 }
 
-# -*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
-# i3 Rice Stuff
-# -*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
-add \
-    x11-misc/dunst \
-    x11-misc/parcellite \
-    x11-misc/pcmanfm \
-    x11-misc/picom \
-    x11-misc/lightdm \
-    x11-misc/i3lock-fancy-rapid
+has() {
+    grep "$i" /var/lib/portage/world >/dev/null || return 1
+}
 
-# RICE
 add \
-    lxde-base/lxappearance
+    app-misc/neofetch \
+    app-misc/toilet
 
 # THEMES
 add \
+    lxde-base/lxappearance \
     x11-themes/arc-theme
 
-eselect repository enable 4nykey
-emerge --sync 4nykey
-add x11-themes/papirus-icon-theme
+if ! has papirus-icon-theme ; then
+    eselect repository enable 4nykey
+    emerge --sync 4nykey
+    add x11-themes/papirus-icon-theme
+fi
 
-eselect repository enable tastytea
-emerge --sync tastytea
-add x11-themes/paper-icon-theme
-
-# eselect repository enable edgets
-# emerge --sync edgets
-# add x11-themes/materia-theme
-# -*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
-
-#x11-wm/i3
-#x11-misc/polybar
+if ! has paper-icon-theme ; then
+    eselect repository enable tastytea
+    emerge --sync tastytea
+    add x11-themes/paper-icon-theme
+fi
 
 # -*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
-# wayfire
+# X11 Rice Stuff
 # -*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
-gui-wm/wayfire
-gui-libs/wayfire-plugins-extra
+# add \
+#     x11-misc/dunst \
+#     x11-misc/parcellite \
+#     x11-misc/pcmanfm \
+#     x11-misc/picom \
+#     x11-misc/lightdm \
+#     x11-misc/i3lock-fancy-rapid \
+#     x11-wm/i3 \
+#     x11-misc/polybar
+# -*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*

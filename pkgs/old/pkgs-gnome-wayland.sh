@@ -4,10 +4,6 @@
 # sometimes I use gnome, but the mouse input lag drives me insane
 # everyone I talk to says its not a thing, ITS DEFINITELY A THING...
 #
-# I can't explain it. It's not as bad on X11 gnome as Wayland gnome, but its there.
-#
-# Something to do with its compositor... Like its forced vsync or something.
-#
 # Call me crazy.
 # ===================================================================================
 

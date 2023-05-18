@@ -1,51 +1,19 @@
-#!/bin/sh
+#!/bin/sh -e
+#
+# Main package script. Meant to be used with all machines.
+#
+# =============================================================
 
 add() {
-    emerge --verbose --noreplace "$@"
+    emerge -av --noreplace --update --verbose-conflicts "$@" || return 1
 }
 
-# development
+# GENTOO-SPECIFIC
 add \
-    app-editors/neovim \
-    dev-python/pynvim \
-    x11-terms/xterm \
-    dev-util/shellcheck-bin \
-    app-containers/docker \
-    app-containers/docker-compose \
-    app-misc/jq \
-    www-apps/hugo \
-    x11-terms/kitty \
-    x11-terms/kitty-shell-integration \
-    x11-terms/kitty-terminfo \
-    dev-python/pillow \
-    dev-lang/rust-bin
-
-# system utils
-add \
-    sys-process/htop  \
-    app-misc/ranger \
-    app-text/tree \
-    sys-apps/pv \
-    sys-apps/progress \
-    sys-process/lsof \
-    sys-apps/ipmitool \
-    sys-apps/lm-sensors \
-    sys-apps/mlocate \
-    sys-apps/pciutils \
-    sys-apps/usbutils \
-    sys-apps/smartmontools \
-    app-admin/sysstat \
-    app-misc/detox \
-    app-misc/neofetch \
-    app-text/dos2unix \
-    app-admin/entr \
-    sys-process/iotop-c \
-    app-admin/doas
-
-# alternative system-utils
-add \
-    sys-apps/exa \
-    sys-apps/bat
+    app-eselect/eselect-python \
+    app-eselect/eselect-repository \
+    app-portage/gentoolkit \
+    app-portage/portage-utils
 
 # SYSTEM DAEMONS
 add \
@@ -53,14 +21,73 @@ add \
     sys-process/cronie \
     net-misc/chrony
 
+# terminal userland
+add \
+    x11-terms/kitty \
+    app-editors/neovim \
+    app-misc/ranger \
+    app-i18n/translate-shell \
+    app-text/tree \
+    sys-apps/pv \
+    sys-apps/progress \
+    sys-apps/exa \
+    sys-apps/bat
+
+# terminal userland needed libraries
+add \
+    dev-python/pynvim
+
+# langs
+add \
+    dev-lang/go \
+    dev-lang/rust-bin
+
+# development
+add \
+    dev-util/shellcheck-bin \
+    app-containers/docker \
+    app-containers/docker-compose \
+    app-misc/jq \
+    www-apps/hugo \
+    dev-python/pylint \
+    dev-python/pillow \
+    dev-python/pip
+
+# system utils
+add \
+    app-admin/doas \
+    app-admin/sudo \
+    sys-process/htop  \
+    sys-process/lsof \
+    sys-apps/lm-sensors \
+    sys-apps/pciutils \
+    sys-apps/usbutils \
+    sys-apps/smartmontools \
+    app-admin/sysstat \
+    sys-process/iotop-c
+
+# ARCHIVE
+add \
+    app-arch/p7zip \
+    app-arch/unrar \
+    app-arch/unzip \
+    app-arch/zip \
+    app-arch/lz4
+
+# scripting utilities
+add \
+    app-admin/entr \
+    app-misc/detox \
+    app-text/dos2unix \
+    sys-fs/inotify-tools \
+    app-misc/dateutils \
+    app-text/pandoc-bin
+
 # FILESYSTEM
 add \
     net-fs/cifs-utils \
     net-fs/samba \
     sys-fs/dosfstools \
-    sys-fs/fuse \
-    sys-fs/fuse:0 \
-    sys-fs/inotify-tools \
     sys-fs/ntfs3g
 
 # SECURITY
@@ -71,27 +98,17 @@ add \
 
 # GFX
 add \
-    media-libs/x264 \
-    media-libs/x265 \
-    media-video/x264-encoder \
     media-gfx/gimp \
     media-plugins/gimp-lqr \
     media-gfx/imagemagick \
     media-gfx/jpegoptim \
     media-libs/exiftool
-# media-plugins/gst-plugins-x264 \
-# media-plugins/gst-plugins-x265 \
-#    media-libs/gst-plugins-ugly \
-#    media-libs/gst-plugins-bad \
 
 # VIDEO
 add \
     media-video/mpv \
-    media-video/shotcut \
     media-video/ffmpegthumbnailer \
-    net-misc/yt-dlp \
-    media-video/v4l2loopback \
-    media-video/obs-studio
+    net-misc/yt-dlp
 
 # AUDIO
 add \
@@ -103,33 +120,6 @@ add \
     media-sound/shntool \
     media-sound/vorbis-tools \
     media-sound/wavpack
-
-# ARCHIVE
-add \
-    app-arch/p7zip \
-    app-arch/unrar \
-    app-arch/unzip \
-    app-arch/zip
-
-# PYTHON
-add \
-    dev-python/pip \
-    dev-python/setuptools \
-    dev-python/pylint
-
-# GENTOO-SPECIFIC
-add \
-    app-eselect/eselect-python \
-    app-eselect/eselect-repository \
-    app-portage/gentoolkit \
-    app-portage/portage-utils
-
-# PRINTING
-add \
-    net-print/cups \
-    net-print/cups-filters \
-    net-print/cups-pdf \
-    net-print/hplip
 
 # NETWORKING
 add \
@@ -149,61 +139,78 @@ add \
     media-sound/bluez-alsa \
     sys-apps/ethtool \
     net-dns/dnsmasq \
-    net-libs/ldns
-
-# misc
-add \
-    app-misc/dateutils
-
-# DRIVERS / FIRMWARE
-add \
-    x11-base/xorg-drivers \
-    x11-drivers/xf86-input-libinput \
-    sys-firmware/sof-firmware
-
-# MISC
-add \
-    app-misc/toilet \
-    app-i18n/translate-shell \
-    app-text/pandoc-bin
-
-# INTERNET / OFFICE
-add \
+    net-libs/ldns \
     net-misc/nextcloud-client
-####    app-office/libreoffice-bin
 
-# MAILSPRING
-eselect repository enable edgets
-emerge --sync edgets
-add mailspring
-
-# PROPRIETARY
+# PRINTING
 add \
-    net-im/discord \
-    media-sound/spotify
+    net-print/cups \
+    net-print/cups-filters \
+    net-print/cups-pdf \
+    net-print/hplip
 
-# LIBS
+# FONTS
 add \
-    dev-cpp/nlohmann_json
+    x11-apps/mkfontscale \
+    media-libs/fontconfig \
+    media-fonts/font-util \
+    media-fonts/fontawesome \
+    media-fonts/liberation-fonts \
+    media-fonts/noto \
+    media-fonts/noto-cjk \
+    media-fonts/noto-emoji \
+    media-fonts/roboto \
+    media-fonts/terminus-font \
+    media-fonts/dejavu
 
-LLVM / Clang / lld
-add \
-    sys-devel/clang \
-    sys-devel/llvm \
-    sys-devel/lld
-
-add \
-    app-text/zathura \
-    app-text/zathura-meta
-
-# nodejs-bin
-# eselect repository enable broverlay
-# emerge --sync broverlay
-# add nodejs-bin
+# ===============================================================================
+# big stuff below
+# ===============================================================================
 
 # add \
-# anki-bin
+#     libreoffice
+
+# # VIDEO EDITING
+# add \
+#     media-video/shotcut \
+#     media-video/obs-studio
+
+# MAILSPRING
+# eselect repository enable edgets
+# emerge --sync edgets
+# add mailspring
 
 # ===============================================================================
 # OLD WORLD
 # ===============================================================================
+## # PROPRIETARY
+# add \
+#     net-im/discord \
+#     media-sound/spotify
+## # LIBS
+# add \
+#     dev-cpp/nlohmann_json
+## LLVM / Clang / lld
+# add \
+#     sys-devel/clang \
+#     sys-devel/llvm \
+#     sys-devel/lld
+## add \
+#     app-text/zathura \
+#     app-text/zathura-meta
+# eselect repository enable broverlay
+# emerge --sync broverlay
+# add nodejs-bin
+####media-video/x264-encoder \
+###media-libs/x264 \
+####    media-libs/x265 \
+# media-plugins/gst-plugins-x264 \
+# media-plugins/gst-plugins-x265 \
+# media-libs/gst-plugins-ugly \
+# media-libs/gst-plugins-bad \
+###media-video/v4l2loopback \
+## # DRIVERS / FIRMWARE
+# add \
+#     x11-base/xorg-drivers \
+#     x11-drivers/xf86-input-libinput \
+#     sys-firmware/sof-firmware
