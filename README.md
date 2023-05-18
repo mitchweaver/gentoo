@@ -29,3 +29,4 @@ power emerge gives you.
 > Switching to Gentoo is like getting finally a relationship that isn't toxic where random fights don't occur and you start thinking how the fuck you coped out with the abusive ex, right?
 
 [/u/Daguq](https://old.reddit.com/r/Gentoo/comments/xculni/how_is_gentoo_so_stable/io7bktm/)
+
