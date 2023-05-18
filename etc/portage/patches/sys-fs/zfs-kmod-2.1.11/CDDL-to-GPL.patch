@@ -1,0 +1,11 @@
+--- src/META
++++ src/META
+@@ -4,7 +4,7 @@
+ Version:       2.1.11
+ Release:      1
+ Release-Tags:  relext
+-License:       CDDL
++License:       GPL
+ Author:        OpenZFS
+ Linux-Maximum: 6.2
+ Linux-Minimum: 3.10
