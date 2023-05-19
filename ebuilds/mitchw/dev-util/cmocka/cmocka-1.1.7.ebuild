@@ -17,6 +17,12 @@ RESTRICT="!test? ( test )"
 
 BDEPEND="doc? ( app-doc/doxygen[dot] )"
 
+# add patch from alpine linux to allow compilation under musl-libc
+# see: https://pkgs.alpinelinux.org/package/edge/main/aarch64/cmocka
+PATCHES=(
+	"${FILESDIR}"/wordsize-musl.patch
+)
+
 multilib_src_configure() {
 	local mycmakeargs=(
 		-DWITH_EXAMPLES=$(usex examples)

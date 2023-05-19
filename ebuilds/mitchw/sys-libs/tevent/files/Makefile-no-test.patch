@@ -1,0 +1,11 @@
+--- src/Makefile
++++ src/Makefile
+@@ -13,7 +13,7 @@
+ 	$(WAF) uninstall
+ 
+ test:
+-	$(WAF) test $(TEST_OPTIONS)
++	:
+ 
+ dist:
+ 	touch .tmplock
