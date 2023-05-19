@@ -1,22 +1,43 @@
+# ======== important repos ===============
+*/*::mitchw **
+*/*::musl **
+*/*::lto-overlay **
+
 # ======== Proprietary ===================
-net-im/discord::gentoo **
-media-sound/spotify::gentoo **
+net-im/discord::gentoo ~amd64
+media-sound/spotify::gentoo ~amd64
 
 # ======= kernel stuff ===================
 sys-kernel/gentoo-sources::gentoo ~amd64 ~arm64
 sys-kernel/zen-sources::gentoo ~amd64 ~arm64
+sys-kernel/asahi-sources::asahi ~amd64 ~arm64
 sys-fs/zfs::gentoo ~amd64 ~arm64
 sys-fs/zfs-kmod::gentoo ~amd64 ~arm64
 
-# ====== musl-libc workarounds ===========
-*/*::musl ~amd64 ~arm64
+# ====== musl-libc / GentooLTO ===========
+app-portage/portage-bashrc-mv::mv ~amd64 ~arm64
+app-shells/runtitle::mv ~amd64 ~arm64
+
+# ===== arm64 specfic ========================
+sys-devel/mold::gentoo ~arm64
+dev-libs/mimalloc::gentoo ~arm64
+app-admin/sysklogd::gentoo ~arm64
+sys-apps/firejail ~arm64
+net-libs/librsync::gentoo ~arm64
+net-misc/nextcloud-client ~arm64
 
 # ===== stuff I need most up to date ===========
-sys-config/ltoize::lto-overlay ~amd64 ~arm64
-app-shells/oksh::mitchw ~amd64 ~arm64
+x11-terms/kitty::gentoo ~amd64 ~arm64
+x11-terms/kitty-shell-integration::gentoo ~amd64 ~arm64
+x11-terms/kitty-terminfo::gentoo ~amd64 ~arm64
 www-apps/hugo::gentoo ~amd64 ~arm64
 net-wireless/bluez-tools::gentoo ~amd64 ~arm64
 media-sound/bluez-alsa::gentoo ~amd64 ~arm64
+
+# ====== cross plat stuff need up to date ===============
+app-shells/oksh::mitchw **
+dev-python/pynvim::gentoo **
+app-misc/ranger::gentoo **
 
 # ============ browsers =====================
 www-client/librewolf::librewolf ~amd64 ~arm64
@@ -28,5 +49,25 @@ dev-libs/nss::gentoo ~amd64 ~arm64
 # ===== Themes / Fonts ===================
 x11-themes/paper-gtk-theme::tastytea **
 x11-themes/paper-icon-theme::tastytea **
+
+# ================================================
+# stuff I have no idea why is key worded
+# ================================================
+sys-apps/progress::gentoo **
+sys-apps/exa::gentoo **
+sys-apps/bat::gentoo **
+app-misc/detox::gentoo **
+app-arch/unrar::gentoo **
+media-gfx/jpegoptim::gentoo **
+media-plugins/gimp-lqr::gentoo **
+media-video/mpv::gentoo **
+net-misc/yt-dlp::gentoo **
+media-sound/pavucontrol::gentoo **
+app-cdr/cuetools::gentoo **
+media-sound/shntool::gentoo **
+media-sound/vorbis-tools::gentoo **
+net-analyzer/speedtest-cli::gentoo **
+net-misc/rdesktop::gentoo **
+app-misc/dateutils::gentoo **
 
 # vim:ft=config

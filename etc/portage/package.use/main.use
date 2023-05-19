@@ -9,7 +9,7 @@ net-misc/nextcloud-client -dolphin -nautilus
 sys-libs/compiler-rt-sanitizers profile
 sys-apps/smartmontools -daemon -update-drivedb -caps
 
-app-editors/neovim python
+app-editors/neovim python -nvimpager
 x11-terms/kitty X
 
 media-gfx/imagemagick jpeg jpeg2k png tiff webp xml

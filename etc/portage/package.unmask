@@ -6,9 +6,12 @@ x11-drivers/nvidia-drivers
 # ================================================
 # OVERLAY UNMASKS (see package.mask)
 # ================================================
-
-# if using musl overlay, allow all
+*/*::asahi
 */*::musl
+*/*::lto-overlay
+
+app-portage/portage-bashrc-mv::mv
+app-shells/runtitle::mv
 
 media-fonts/cozette::robertgzr
 media-fonts/spleen::src_prepare-overlay

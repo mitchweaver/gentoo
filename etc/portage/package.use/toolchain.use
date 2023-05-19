@@ -1,3 +1,5 @@
 # built-in to hardened profile: default-stack-clash-protection default-znow ssp
 sys-devel/gcc plugins graphite
-sys-devel/binutils plugins
+
+# gold is required by some packages on arm64
+sys-devel/binutils gold plugins

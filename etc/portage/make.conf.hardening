@@ -20,6 +20,17 @@ COMMON_FLAGS_HARDENING="$COMMON_FLAGS_HARDENING -fstack-protector-strong"
 # see: http://gcc.gnu.org/onlinedocs/gcc/Instrumentation-Options.html
 COMMON_FLAGS_HARDENING="$COMMON_FLAGS_HARDENING -fstack-clash-protection"
 
+# Check that target addresses are valid before changing flow control.
+# Helps protect against ROP attacks.
+#
+# * branch: only branching
+# * return: only returns
+# * full: both
+#
+# see: http://gcc.gnu.org/onlinedocs/gcc/Instrumentation-Options.html
+# NOTE: ONLY FOR AMD64 --- IS NOT AVAILABLE FOR ARM64
+########################COMMON_FLAGS_HARDENING="$COMMON_FLAGS_HARDENING -fcf-protection=full"
+
 # Full Read-Only Relocation
 #
 # * disable lazy library binding

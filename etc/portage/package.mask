@@ -5,8 +5,6 @@
 # use pandoc-bin else pulls in ghc and a bunch of haskell crap
 app-text/pandoc
 
-
-
 # =========================================================
 # MUSL LIBC WORKAROUNDS
 # =========================================================
@@ -30,6 +28,8 @@ sys-auth/elogind::gentoo
 # Better solution is have a default blacklist all and only
 # whitelist specific packages you want to install from the
 # overlay. This in MY OPINION should be the DEFAULT...
+
+*/*::mv
 */*::4nykey
 */*::tastytea
 */*::edgets

@@ -4,3 +4,4 @@ sys-kernel/pf-sources -build
 
 # Asahi Linux
 sys-kernel/asahi-sources symlink
+sys-apps/kmod zstd
