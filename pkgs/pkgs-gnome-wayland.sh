@@ -1,31 +1,50 @@
-#!/bin/sh
-
-# ===================================================================================
-# sometimes I use gnome, but the mouse input lag drives me insane
-# everyone I talk to says its not a thing, ITS DEFINITELY A THING...
-#
-# Call me crazy.
-# ===================================================================================
+#!/bin/sh -e
 
 add() {
-    emerge --verbose --noreplace "$@"
+    emerge -avnuN "$@"
 }
+
+alias confirm='echo "Enter to continue..." ; read -r _'
+
+if ! grep 'sys-apps/accountsservice' /var/lib/portage/world >/dev/null ; then
+    printf '\n%s' "Are you using musl libc? (y/n):"
+    read -r ans
+
+    case $ans in
+        y|yes)
+            add sys-apps/accountsservice::musl
+            ;;
+        n|no)
+            add sys-apps/accountsservice::gentoo
+            ;;
+        *)
+            exit 1
+    esac
+fi
 
 add \
     gnome-base/gnome-light \
+    gnome-base/gdm
+
+confirm
+
+add \
     gnome-base/nautilus \
-    gnome-base/gdm \
     gnome-extra/gnome-shell-extensions \
     gnome-extra/gnome-tweaks \
-    app-eselect/eselect-gnome-shell-extensions \
-    gnome-extra/extension-manager \
     media-gfx/gnome-screenshot
+
+confim
+
+add \
+    dev-libs/libgweather
+
+###############app-eselect/eselect-gnome-shell-extensions
+
+confirm
 
 # add \
 #     x11-misc/gpaste
-
-add \
-    gui-libs/display-manager-init
 
 add \
     gnome-extra/gnome-shell-extension-appindicator \
@@ -35,6 +54,13 @@ add \
     gnome-extra/gnome-shell-extension-alphabetical-grid \
     gnome-extra/gnome-shell-extension-bluetooth-quick-connect \
     gnome-extra/gnome-shell-frippery
+
+confirm
+
+add \
+    gui-libs/display-manager-init
+
+confirm
 
 # eselect repository enable 4nykey
 # emerge --sync 4nykey
@@ -47,9 +73,11 @@ add \
 
 echo 'DISPLAYMANAGER="gdm"' > /etc/conf.d/display-manager
 rc-update add elogind default
-rc-update add display-manager default
+
+echo "you may want to: 'rc-update add display-manager default'"
 
 # see: https://wiki.gentoo.org/wiki/GNOME/Guide#Non-root_user_authentication_for_dialogs
+mkdir -p /etc/polkit-1/rules.d
 cat > /etc/polkit-1/rules.d/49-wheel.rules <<"EOF"
 polkit.addAdminRule(function(action, subject) {
     return ["unix-group:wheel"];

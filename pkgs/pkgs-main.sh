@@ -40,7 +40,9 @@ add \
 # langs
 add \
     dev-lang/go \
-    dev-lang/rust-bin
+    dev-lang/rust \
+    dev-lang/typescript \
+    net-libs/nodejs
 
 # development
 add \
@@ -80,8 +82,9 @@ add \
     app-misc/detox \
     app-text/dos2unix \
     sys-fs/inotify-tools \
-    app-misc/dateutils \
-    app-text/pandoc-bin
+    app-misc/dateutils
+
+######    app-text/pandoc
 
 # FILESYSTEM
 add \
@@ -140,7 +143,8 @@ add \
     sys-apps/ethtool \
     net-dns/dnsmasq \
     net-libs/ldns \
-    net-misc/nextcloud-client
+    net-misc/nextcloud-client \
+    net-fs/nfs-utils
 
 # PRINTING
 add \
@@ -162,6 +166,19 @@ add \
     media-fonts/roboto \
     media-fonts/terminus-font \
     media-fonts/dejavu
+
+# MISC LIBS
+add \
+    dev-cpp/nlohmann_json \
+    dev-python/numpy \
+    dev-python/scipy
+
+
+# ===============================================================================
+# flatpak
+# ===============================================================================
+add \
+    sys-apps/flatpak
 
 # ===============================================================================
 # big stuff below
@@ -187,9 +204,6 @@ add \
 # add \
 #     net-im/discord \
 #     media-sound/spotify
-## # LIBS
-# add \
-#     dev-cpp/nlohmann_json
 ## LLVM / Clang / lld
 # add \
 #     sys-devel/clang \

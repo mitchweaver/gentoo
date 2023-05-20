@@ -8,6 +8,9 @@ has() {
     grep "$i" /var/lib/portage/world >/dev/null || return 1
 }
 
+eselect repository enable guru
+emerge --sync guru
+
 add \
     app-misc/neofetch \
     app-misc/toilet
