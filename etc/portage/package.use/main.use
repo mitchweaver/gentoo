@@ -9,7 +9,12 @@ net-misc/nextcloud-client -dolphin -nautilus
 sys-libs/compiler-rt-sanitizers profile
 sys-apps/smartmontools -daemon -update-drivedb -caps
 
-app-editors/neovim python -nvimpager
+# =====================================================================================
+# Lua issues - (no jit on musl)
+# =====================================================================================
+app-editors/neovim python -nvimpager lua_single_target_lua5-1 -lua_single_target_luajit
+dev-lua/luv lua_single_target_lua5-1 -lua_single_target_luajit
+
 x11-terms/kitty X
 
 media-gfx/imagemagick jpeg jpeg2k png tiff webp xml
@@ -58,5 +63,6 @@ sys-apps/lm-sensors abi_x86_32
 
 net-libs/nodejs npm -lto -pgo -snapshot
 
-dev-lang/rust system-llvm rustfmt rust-analyzer -miri -clippy
-dev-lang/rust-bin system-llvm rustfmt rust-analyzer -miri -clippy 
+media-libs/harfbuzz                truetype
+x11-libs/gdk-pixbuf                jpeg
+

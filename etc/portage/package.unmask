@@ -3,12 +3,17 @@ media-sound/spotify
 net-im/discord-bin
 x11-drivers/nvidia-drivers
 
+# ========= Bin Packages =========================
+www-client/librewolf-bin::librewolf
+www-client/firefox-bin::gentoo
+
 # ================================================
 # OVERLAY UNMASKS (see package.mask)
 # ================================================
 */*::asahi
 */*::musl
 */*::lto-overlay
+*/*::mitchw
 
 app-portage/portage-bashrc-mv::mv
 app-shells/runtitle::mv
@@ -35,5 +40,7 @@ app-misc/anki-bin::guru
 x11-misc/i3lock-fancy-rapid::guru
 app-office/joplin-bin::guru
 x11-misc/xbanish::guru
+sys-process/gotop::guru
+gui-wm/swayfx::guru
 
 # vim:ft=config

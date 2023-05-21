@@ -4,20 +4,27 @@
 gnome-base/gnome-control-center elogind -systemd -gnome-online-accounts
 sys-apps/accountsservice elogind -systemd
 gnome-base/gdm wayland elogind -systemd -audit -fprint -plymouth
+
 # this needs wacom and colord really annoying
 # may be able to get rid of after the ruby31 change?
-gnome-base/gnome-settings-daemon elogind input_devices_wacom colord -systemd
+gnome-base/gnome-settings-daemon elogind colord -input_devices_wacom -systemd
 
 # ===============================================
 # mutter
 # ===============================================
 x11-wm/mutter wayland udev gnome elogind -systemd -wacom
+
+# ===============================================
+# NON-GNOME LIBS
+# ===============================================
 dev-libs/libusb udev
 virtual/libusb udev
 dev-libs/libportal gtk
-media-libs/libcanberra -pulseaudio
+media-libs/libcanberra pulseaudio
 media-libs/clutter egl
 media-libs/cogl gles2
+app-misc/tracker -miners
+
 
 # ===============================================
 # base
@@ -38,11 +45,6 @@ gnome-base/nautilus gstreamer -previewer -sendto
 x11-misc/gpaste gnome
 
 # ===============================================
-# themes
-# ===============================================
-x11-themes/arc-theme gnome-shell
-
-# ===============================================
 # misc
 # ===============================================
 media-video/ffmpegthumbnailer gnome gtk
@@ -51,12 +53,43 @@ media-video/ffmpegthumbnailer gnome gtk
 # crap
 # ===============================================
 gnome-extra/gnome-contacts -gnome-online-accounts
-gnome-extra/evolution-data-server -gtk -introspection -weather -gnome-online-accounts
+gnome-extra/evolution-data-server -gtk -weather -gnome-online-accounts
 net-wireless/gnome-bluetooth -sendto
-app-arch/gnome-autoar -gtk -introspection
+app-arch/gnome-autoar -gtk
 media-fonts/cantarell font_types_otf -X
-dev-libs/gjs -readline
 dev-libs/gdata -gnome-online-accounts
+# app-accessibility/at-spi2-core     introspection
+# dev-libs/atk                       introspection
+# x11-libs/gtk+                      introspection
+# x11-libs/gdk                       introspection
+# x11-libs/pango                     introspection
+# media-libs/harfbuzz                introspection truetype
+# x11-libs/gdk-pixbuf                introspection jpeg
 
-##################app-i18n/ibus vala
-##################dev-libs/appstream vala
+# ===========================================
+# IF USING GNOME
+# ===========================================
+# app-crypt/gcr                        introspection
+# x11-wm/mutter                        introspection
+# sys-auth/polkit                      introspection
+# gnome-base/gsettings-desktop-schemas introspection
+# sys-apps/accountsservice             introspection
+# app-i18n/ibus                        introspection
+# gui-libs/gtk                         introspection
+# app-misc/geoclue                     introspection
+# media-libs/graphene                  introspection
+# net-libs/libsoup                     introspection
+# sys-power/upower                     introspection
+# gnome-base/librsvg                   introspection
+# x11-libs/libnotify                   introspection
+# dev-libs/json-glib                   introspection
+# gnome-base/gnome-desktop             introspection
+# gui-libs/libhandy                    introspection
+# gnome-base/libgtop                   introspection
+# gnome-base/gnome-menus               introspection
+# gui-libs/libadwaita                  introspection
+# media-libs/clutter                   introspection
+# media-libs/cogl                      introspection
+# dev-libs/libgweather                 introspection
+# gnome-base/nautilus                  introspection
+# media-libs/mesa                      introspection

@@ -1,3 +1,8 @@
+dev-python/numpy lapack
+
+
+
+
 dev-python/PyQt5                       python_targets_python3_10 svg gui widgets network webchannel printsupport
 dev-python/decorator                   python_targets_python3_10
 dev-python/protobuf                    python_targets_python3_10

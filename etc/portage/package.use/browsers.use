@@ -1,8 +1,10 @@
-www-client/firefox lto pgo hwaccel gmp-autoupdate -geckodriver
-www-client/firefox-bin lto pgo hwaccel gmp-autoupdate -geckodriver
+#www-client/firefox     -clang lto pgo jumbo-build hwaccel gmp-autoupdate system-av1 system-harfbuzz system-icu system-jpeg system-libevent system-libvpx system-png system-python-libs system-webp -geckodriver
+#www-client/firefox-bin -clang lto pgo jumbo-build hwaccel gmp-autoupdate system-av1 system-harfbuzz system-icu system-jpeg system-libevent system-libvpx system-png system-python-libs system-webp -geckodriver
 
-www-client/librewolf lto pgo hwaccel gmp-autoupdate -geckodriver -eme-free
-www-client/librewolf-bin lto pgo hwaccel gmp-autoupdate -geckodriver -eme-free
+#www-client/librewolf     -clang jumbo-build lto pgo hwaccel gmp-autoupdate -geckodriver -eme-free system-av1 system-harfbuzz system-icu system-jpeg system-libevent system-libvpx system-png system-python-libs system-webp
+#www-client/librewolf-bin -clang jumbo-build lto pgo hwaccel gmp-autoupdate -geckodriver -eme-free system-av1 system-harfbuzz system-icu system-jpeg system-libevent system-libvpx system-png system-python-libs system-webp
+
+www-client/librewolf     jumbo-build lto pgo gmp-autoupdate -clang -hwaccel -geckodriver -eme-free -system-av1 -system-harfbuzz -system-icu -system-jpeg -system-libevent -system-libvpx -system-png -system-python-libs -system-webp
 
 media-libs/libvpx postproc
 media-libs/libpng apng

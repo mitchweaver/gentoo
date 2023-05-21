@@ -3,4 +3,4 @@ media-libs/imblib2 jpeg png gif webp -bzip2
 
 media-gfx/sxiv jpeg png gif webp
 
-media-video/ffmpegthumbnailer png jpeg jpg
+media-video/ffmpegthumbnailer png jpeg jpg gtk

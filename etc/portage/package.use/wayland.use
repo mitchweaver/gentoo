@@ -5,9 +5,26 @@ dev-libs/wayland abi_x86_32
 dev-qt/qtgui egl X
 dev-qt/qtwayland X
 
-# =========== SWAY ============================
+gui-libs/wlroots tinywl x11 x11-backend
+
+# wallpaper setter for all wayland wms not just sway
+gui-apps/swaybg gdk-pixbuf
+
 # needs policykit for seatd
 sys-auth/elogind policykit
-gui-libs/wlroots tinywl x11
-gui-wm/sway tray swaybar grimshot swaynag -wallpapers
+sys-auth/seatd server elogind
+
+# =========== HYPRLAND ========================
+# NOTE: legacyrender is for M1 Mac gpu
+#       see my overlay for info
+####gui-wm/hyprland legacyrender -system-wlroots
+gui-wm/hyprland -legacyrender -system-wlroots
+
+
+
+gui-apps/waybar network pipewire popups tray udev upower wifi
+#-mpd -mpris
+
+gui-wm/sway tray swaybar swaynag -grimshot -wallpapers
+gui-wm/swayfx tray swaybar swaynag -grimshot -wallpapers
 gui-apps/grim jpeg
