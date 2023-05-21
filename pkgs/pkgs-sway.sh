@@ -7,9 +7,11 @@ add() {
 add \
     gui-wm/sway \
     gui-apps/swaybg \
+    gui-apps/mako \
     gui-libs/xdg-desktop-portal-wlr \
     gui-apps/grim \
-    gui-apps/slurp
+    gui-apps/slurp \
+    gui-apps/wofi
 
 # gui-apps/wl-clipboard
 

@@ -24,7 +24,8 @@ fi
 
 add \
     gnome-base/gnome-light \
-    gnome-base/gdm
+    gnome-base/gdm \
+    dev-libs/gjs::mitchw
 
 confirm
 
@@ -46,14 +47,14 @@ confirm
 # add \
 #     x11-misc/gpaste
 
-add \
-    gnome-extra/gnome-shell-extension-appindicator \
-    gnome-extra/gnome-shell-extension-dash-to-panel \
-    gnome-extra/gnome-shell-extension-control-blur-effect-on-lock-screen \
-    gnome-extra/gnome-shell-extension-pop-shell \
-    gnome-extra/gnome-shell-extension-alphabetical-grid \
-    gnome-extra/gnome-shell-extension-bluetooth-quick-connect \
-    gnome-extra/gnome-shell-frippery
+# add \
+#     gnome-extra/gnome-shell-extension-appindicator \
+#     gnome-extra/gnome-shell-extension-dash-to-panel \
+#     gnome-extra/gnome-shell-extension-control-blur-effect-on-lock-screen \
+#     gnome-extra/gnome-shell-extension-pop-shell \
+#     gnome-extra/gnome-shell-extension-alphabetical-grid \
+#     gnome-extra/gnome-shell-extension-bluetooth-quick-connect \
+#     gnome-extra/gnome-shell-frippery
 
 confirm
 
@@ -66,6 +67,28 @@ confirm
 # emerge --sync 4nykey
 # add \
 #     gnome-extra/gnome-shell-extension-openweather
+
+# -------------------------------
+# REMOVING
+# -------------------------------
+# pkg d \
+#     sys-apps/accountsservice \
+#     gnome-base/gnome-light \
+#     gnome-base/gdm \
+#     gnome-base/nautilus \
+#     gnome-extra/gnome-shell-extensions \
+#     gnome-extra/gnome-tweaks \
+#     media-gfx/gnome-screenshot \
+#     gnome-extra/gnome-shell-extension-appindicator \
+#     gnome-extra/gnome-shell-extension-dash-to-panel \
+#     gnome-extra/gnome-shell-extension-control-blur-effect-on-lock-screen \
+#     gnome-extra/gnome-shell-extension-pop-shell \
+#     gnome-extra/gnome-shell-extension-alphabetical-grid \
+#     gnome-extra/gnome-shell-extension-bluetooth-quick-connect \
+#     gnome-extra/gnome-shell-frippery \
+#     dev-libs/libgweather \
+#     x11-misc/gpaste \
+#     dev-libs/gjs
 
 # -------------------------------
 # After install
