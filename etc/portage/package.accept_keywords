@@ -1,28 +1,30 @@
 # ======== important repos ===============
-*/*::mitchw **
-*/*::musl **
-*/*::lto-overlay **
+*/*::mitchw ~amd64 ~arm64 amd64 arm64
+*/*::musl ~amd64 ~arm64 amd64 arm64
+*/*::lto-overlay ~amd64 ~arm64 amd64 arm64
 
 # ======= blanket keyword accepts per category ============
-media-video/*::gentoo ~amd64 ~arm64
-media-sound/*::gentoo ~amd64 ~arm64
-net-im/*::gentoo ~amd64 ~arm64
-x11-terms/*::gentoo ~amd64 ~arm64
-app-editors/*::gentoo  ~amd64 ~arm64
-www-apps/*::gentoo ~amd64 ~arm64
-gui-apps/*::gentoo ~amd64 ~arm64
-media-libs/*::gentoo ~amd64 ~arm64
-app-misc/*::gentoo ~amd64 ~arm64
-media-gfx/*::gentoo ~amd64 ~arm64
-media-plugins/*::gentoo ~amd64 ~arm64
-app-arch/*::gentoo ~amd64 ~arm64
-gui-wm/*::gentoo ~amd64 ~arm64
+media-video/*::gentoo ~amd64 ~arm64 amd64 arm64
+media-sound/*::gentoo ~amd64 ~arm64 amd64 arm64
+net-im/*::gentoo ~amd64 ~arm64 amd64 arm64
+x11-terms/*::gentoo ~amd64 ~arm64 amd64 arm64
+x11-misc/*::gentoo ~amd64 ~arm64 amd64 arm64
+app-editors/*::gentoo  ~amd64 ~arm64 amd64 arm64
+www-apps/*::gentoo ~amd64 ~arm64 amd64 arm64
+gui-apps/*::gentoo ~amd64 ~arm64 amd64 arm64
+media-libs/*::gentoo ~amd64 ~arm64 amd64 arm64
+media-gfx/*::gentoo ~amd64 ~arm64 amd64 arm64
+app-misc/*::gentoo ~amd64 ~arm64 amd64 arm64
+media-gfx/*::gentoo ~amd64 ~arm64 amd64 arm64
+media-plugins/*::gentoo ~amd64 ~arm64 amd64 arm64
+app-arch/*::gentoo ~amd64 ~arm64 amd64 arm64
+gui-wm/*::gentoo ~amd64 ~arm64 amd64 arm64
 
-x11-themes/* **
-media-fonts/* **
-gnome-base/*::gentoo **
-gnome-extra/*::gentoo **
-gnome-extra/gnome-shell-extension-* **
+x11-themes/* ~amd64 ~arm64 amd64 arm64
+media-fonts/* ~amd64 ~arm64 amd64 arm64
+gnome-base/*::gentoo ~amd64 ~arm64 amd64 arm64
+gnome-extra/*::gentoo ~amd64 ~arm64 amd64 arm64
+gnome-extra/gnome-shell-extension-* ~amd64 ~arm64 amd64 arm6
 
 # ======= kernel stuff ===================
 sys-kernel/gentoo-sources::gentoo ~amd64 ~arm64
@@ -91,20 +93,18 @@ sys-power/acpilight **
 # ================================================
 # non-critical stuff I have no idea why is key worded
 # ================================================
-sys-apps/progress::gentoo **
-sys-apps/exa::gentoo **
-sys-apps/bat::gentoo **
-net-misc/yt-dlp::gentoo **
-app-cdr/cuetools::gentoo **
-media-sound/shntool::gentoo **
-media-sound/vorbis-tools::gentoo **
-net-analyzer/speedtest-cli::gentoo **
-net-misc/rdesktop::gentoo **
-lxde-base/lxappearance ~amd64 ~arm64
-x11-misc/pcmanfm **
-x11-libs/libfm **
-sys-process/gotop **
-x11-misc/gpaste **
-dev-libs/date ~amd64 ~arm64
+sys-apps/progress::gentoo ~amd64 ~arm64 amd64 arm64
+sys-apps/exa::gentoo ~amd64 ~arm64 amd64 arm64
+sys-apps/bat::gentoo ~amd64 ~arm64 amd64 arm64
+net-misc/yt-dlp::gentoo ~amd64 ~arm64 amd64 arm64
+app-cdr/cuetools::gentoo ~amd64 ~arm64 amd64 arm64
+media-sound/shntool::gentoo ~amd64 ~arm64 amd64 arm64
+media-sound/vorbis-tools::gentoo ~amd64 ~arm64 amd64 arm64
+net-analyzer/speedtest-cli::gentoo ~amd64 ~arm64 amd64 arm64
+net-misc/rdesktop::gentoo ~amd64 ~arm64 amd64 arm64
+lxde-base/lxappearance ~amd64 ~arm~amd64 ~arm64 amd64 arm64
+x11-libs/libfm ~amd64 ~arm64 amd64 arm64
+sys-process/gotop ~amd64 ~arm64 amd64 arm64
+dev-libs/date ~amd64 ~arm64 amd64 arm64
 
 # vim:ft=config

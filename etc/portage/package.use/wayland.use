@@ -9,22 +9,32 @@ gui-libs/wlroots tinywl x11 x11-backend
 
 # wallpaper setter for all wayland wms not just sway
 gui-apps/swaybg gdk-pixbuf
+gui-apps/grim jpeg
 
 # needs policykit for seatd
 sys-auth/elogind policykit
 sys-auth/seatd server elogind
 
-# =========== HYPRLAND ========================
-# NOTE: legacyrender is for M1 Mac gpu
-#       see my overlay for info
-####gui-wm/hyprland legacyrender -system-wlroots
+# -*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
+# HYPRLAND
+# -*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
 gui-wm/hyprland -legacyrender -system-wlroots
 
-
-
+# -*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
+# WAYBAR
+# -*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
 gui-apps/waybar network pipewire popups tray udev upower wifi
-#-mpd -mpris
+x11-libs/gtk+ introspection
+app-accessibility/at-spi2-core introspection
+x11-libs/gdk-pixbuf introspection
+x11-libs/pango introspection
+media-libs/harfbuzz introspection
 
+# redshift for wayland
+x11-misc/gammastep appindicator
+
+# -*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
+# SWAY
+# -*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
 gui-wm/sway tray swaybar swaynag -grimshot -wallpapers
 gui-wm/swayfx tray swaybar swaynag -grimshot -wallpapers
-gui-apps/grim jpeg
