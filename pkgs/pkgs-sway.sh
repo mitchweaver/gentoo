@@ -7,13 +7,15 @@ add() {
 add \
     gui-wm/sway \
     gui-apps/swaybg \
-    gui-apps/mako \
+    gui-apps/swayidle \
+    gui-apps/swaylock \
     gui-libs/xdg-desktop-portal-wlr \
+    gui-apps/wl-clipboard
+
+add \
+    gui-apps/mako \
     gui-apps/grim \
     gui-apps/slurp \
-    gui-apps/wofi
+    gui-apps/wofi \
+    x11-misc/gammastep
 
-# gui-apps/wl-clipboard
-
-# x11-misc/lightdm
-#gui-libs/display-manager-init

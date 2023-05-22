@@ -122,7 +122,9 @@ add \
     media-sound/pavucontrol \
     media-sound/shntool \
     media-sound/vorbis-tools \
-    media-sound/wavpack
+    media-sound/wavpack \
+    media-plugins/gst-plugins-v4l2 \
+    media-video/v4l2loopback
 
 # NETWORKING
 add \
@@ -153,25 +155,13 @@ add \
     net-print/cups-pdf \
     net-print/hplip
 
-# FONTS
-add \
-    x11-apps/mkfontscale \
-    media-libs/fontconfig \
-    media-fonts/font-util \
-    media-fonts/fontawesome \
-    media-fonts/liberation-fonts \
-    media-fonts/noto \
-    media-fonts/noto-cjk \
-    media-fonts/noto-emoji \
-    media-fonts/roboto \
-    media-fonts/terminus-font \
-    media-fonts/dejavu
-
 # MISC LIBS
 add \
     dev-cpp/nlohmann_json \
     dev-python/numpy \
-    dev-python/scipy
+    dev-python/scipy \
+    libnotify \
+    libsecret
 
 
 # ===============================================================================
