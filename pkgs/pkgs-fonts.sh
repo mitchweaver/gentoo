@@ -27,3 +27,7 @@ add \
     media-fonts/robotomono-nerdfont::guru \
     media-fonts/gohufont::guru \
     media-fonts/iosevka-nerdfont::guru
+
+eselect repository enable src_prepare-overlay
+emerge --sync src_prepare-overlay
+add media-fonts/spleen::src_prepare-overlay

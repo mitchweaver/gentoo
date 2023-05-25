@@ -16,6 +16,7 @@ add \
     x11-apps/xsetroot \
     x11-misc/xdotool \
     x11-apps/mesa-progs \
+    x11-apps/xev
 
 
 # x11-misc/xclip \
