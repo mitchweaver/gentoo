@@ -15,7 +15,6 @@ www-client/firefox-bin::gentoo
 */*::lto-overlay
 */*::mitchw
 
-media-fonts/*
 x11-themes/*
 
 app-portage/portage-bashrc-mv::mv
@@ -38,5 +37,14 @@ app-office/joplin-bin::guru
 x11-misc/xbanish::guru
 sys-process/gotop::guru
 gui-wm/swayfx::guru
+dev-python/markdownify::guru
+
+# -*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
+# FONTS
+# -*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
+media-fonts/robotomono-nerdfont::guru
+media-fonts/gohufont::guru
+media-fonts/iosevka-nerdfont::guru
+media-fonts/spleen::src_prepare-overlay
 
 # vim:ft=config
