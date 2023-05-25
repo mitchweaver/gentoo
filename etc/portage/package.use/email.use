@@ -1,0 +1,18 @@
+# geary
+dev-libs/folks -bluetooth
+dev-libs/gmime vala -crypt
+app-text/enchant hunspell
+
+net-libs/webkit-gtk introspection
+dev-libs/libgee introspection
+media-libs/gsound vala introspection
+app-text/gspell vala introspection
+gui-libs/libhandy vala introspection
+app-crypt/libsecret introspection vala
+net-libs/libsoup introspection vala
+app-crypt/gcr:0 introspection vala
+net-libs/gnome-online-accounts vala introspection
+
+# evolution
+mail-client/evolution -bogofilter -spamassassin -weather -ytnef -vala
+gnome-extra/evolution-data-server -vala -weather

@@ -1,34 +1,55 @@
-<dev-libs/openssl-3.0.8-r4
+# =========================================================
+# TOOLCHAIN / KERNEL
+# =========================================================
 >sys-kernel/gentoo-sources-6.2.11
 >sys-kernel/zen-sources-6.2.11
 
-# use pandoc-bin else pulls in ghc and a bunch of haskell crap
-app-text/pandoc
+# > 1.2.4 bugged for various rust/llvm packages
+# ex: https://bugs.gentoo.org/906951
+>sys-libs/musl-1.2.3-r7
+
+# most stable bug-free version on musl as of 05.17.23
+>sys-devel/gcc-12.2.1_p20230428-r1
+
+>sys-devel/binutils-2.40-r5
+>sys-devel/binutils-libs-2.40-r5
+
+# =========================================================
+# LIBS
+# =========================================================
+<dev-libs/openssl-3.0.8-r4
 
 # =========================================================
 # MUSL LIBC WORKAROUNDS
 # =========================================================
-# most stable bug-free version as of 05.17.23
->sys-devel/gcc-12.2.1_p20230428-r1
-
 # force usage of older elogind that is patched from the musl overlay
 sys-auth/elogind::gentoo
-
 # force usage of ::musl's samba
 net-fs/samba::gentoo
 
 # =========================================================
 # Asahi Linux
 # =========================================================
-# At time of writing rust must be 1.66.0 or newer for kernel 6.2.0
+# as of May 2023 rust must be 1.66.0 or newer for kernel 6.2.0
 <dev-lang/rust-1.66.0
 <dev-lang/rust-bin-1.66.0
 <virtual/rust-1.66.0
+# Current most updated stable rust for aarch64+musl is 1.66.1
+>dev-lang/rust-1.66.1-r1
+>dev-lang/rust-bin-1.66.1-r1
+>virtual/rust-1.66.1-r1
+
 # highest version allowed for kernel 6.2.0 is 0.56.0
 >dev-util/bindgen-0.56.0
 
 # blacklist gentoo's mesa version to force picking up asahi's
 media-libs/mesa::gentoo
+
+# =========================================================
+# DEBLOAT
+# =========================================================
+# use pandoc-bin else pulls in ghc and a bunch of haskell crap
+app-text/pandoc
 
 # =========================================================
 # BUGS

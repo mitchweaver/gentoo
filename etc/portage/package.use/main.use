@@ -66,3 +66,6 @@ net-libs/nodejs npm -lto -pgo -snapshot
 media-libs/harfbuzz                truetype
 x11-libs/gdk-pixbuf                jpeg
 
+
+
+dev-lang/ruby -rdoc
