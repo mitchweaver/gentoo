@@ -9,4 +9,6 @@ INPUT_DEVICES="asahi"
 GRUB_PLATFORMS="efi-64"
 CHOST="aarch64-gentoo-linux-musl"
 
+ACCEPT_KEYWORDS="~arm64 arm64"
+
 # vim:ft=config
