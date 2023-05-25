@@ -27,7 +27,6 @@ S="${WORKDIR}"
 IUSE="-musl"
 
 src_install() {
-
 	if use musl ; then
 		die "AppImage is only for glibc"
 	fi
