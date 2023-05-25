@@ -26,4 +26,5 @@ etc/portage/make.conf.lto
 etc/portage/make.conf.lto.defines
 etc/portage/package.cflags
 etc/portage/savedconfig
+etc/portage/repos
 *._cfg000*
