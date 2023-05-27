@@ -1,18 +1,27 @@
-# ===============================================
-# OpenRC/elogind instead of systemd
-# ===============================================
-gnome-base/gnome-control-center elogind -systemd -gnome-online-accounts
-sys-apps/accountsservice elogind -systemd
-gnome-base/gdm wayland elogind -systemd -audit -fprint -plymouth
 
-# this needs wacom and colord really annoying
-# may be able to get rid of after the ruby31 change?
-gnome-base/gnome-settings-daemon elogind colord -input_devices_wacom -systemd
+# TEMP/TESTING
+gnome-extra/evolution-data-server vala
+dev-libs/libical vala
+gnome-base/librsvg vala
+
+
+
+
+
+
+# ===============================================
+# OpenRC/elogind
+# ===============================================
+gnome-base/gnome-control-center elogind -gnome-online-accounts
+sys-apps/accountsservice elogind
+gnome-base/gdm wayland elogind -audit -fprint -plymouth
+
+gnome-base/gnome-settings-daemon elogind colord
 
 # ===============================================
 # mutter
 # ===============================================
-x11-wm/mutter wayland udev gnome elogind -systemd -wacom
+x11-wm/mutter wayland udev gnome elogind
 
 # ===============================================
 # NON-GNOME LIBS
@@ -24,7 +33,6 @@ media-libs/libcanberra pulseaudio
 media-libs/clutter egl
 media-libs/cogl gles2
 app-misc/tracker -miners
-
 
 # ===============================================
 # base
@@ -58,6 +66,7 @@ net-wireless/gnome-bluetooth -sendto
 app-arch/gnome-autoar -gtk
 media-fonts/cantarell font_types_otf -X
 dev-libs/gdata -gnome-online-accounts
+
 # app-accessibility/at-spi2-core     introspection
 # dev-libs/atk                       introspection
 # x11-libs/gtk+                      introspection
