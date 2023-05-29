@@ -2,7 +2,6 @@
 app-office/libroffice -bluetooth -googledrive -mariadb -base -offlinehelp
 app-office/libroffice-bin -bluetooth -googledrive -mariadb -base
 
-media-libs/harfbuzz icu
 dev-libs/xmlsec nss
 
 # note: nls needed on boost for libreoffice-bin

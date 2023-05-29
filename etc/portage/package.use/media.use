@@ -1,6 +1,9 @@
 media-video/mpv X jpeg png rubberband libcaca zimg -libcaca
 media-video/ffmpegthumbnailer png jpeg jpg gtk
 
+# note: browser plugin bugged on musl as of 05/23
+media-video/obs-studio X screencast nvenc pipewire v4l pulseaudio -vlc -websocket -speex -browser
+media-video/ffmpeg X x264 opus nvenc pipewire
 
 # =========== LIBS ===============
 media-libs/sdl12-image gif jpeg png
@@ -12,3 +15,4 @@ media-libs/mlt xml sdl frei0r qt5 opengl ffmpeg jack
 media-libs/opencv contribdnn contrib
 media-sound/jack2 -tools
 media-sound/jack-example-tools -readline
+

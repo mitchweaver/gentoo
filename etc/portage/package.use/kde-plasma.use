@@ -1,0 +1,22 @@
+kde-plasma/plasma-workspace -appstream -calendar -wallpaper-metadata
+media-libs/phonon -vlc
+kde-plasma/kdeplasma-addons -alternate-calendar
+dev-qt/qtprintsupport cups
+
+# ====================================================================
+# NEED POLICYKIT / POLKIT
+# ====================================================================
+kde-frameworks/kauth policykit
+
+# ====================================================================
+# NEED QML
+# ====================================================================
+kde-frameworks/sonnet qml
+kde-frameworks/prison qml
+kde-frameworks/kconfig qml
+kde-frameworks/kitemmodels qml
+
+# ====================================================================
+# JUNK
+# ====================================================================
+kde-frameworks/ktexteditor -editorconfig

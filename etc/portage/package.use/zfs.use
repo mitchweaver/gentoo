@@ -1,2 +1,2 @@
 sys-apps/util-linux static-libs
-sys-boot/grub libzfs -themes
+sys-boot/grub libzfs mount -themes

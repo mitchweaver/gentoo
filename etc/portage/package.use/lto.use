@@ -1,5 +1,5 @@
 dev-libs/icu abi_x86_32
-dev-libs/libxml2 abi_x86_32 icu
+dev-libs/libxml2 abi_x86_32
 sys-libs/gpm abi_x86_32
 
 app-portage/portage-bashrc-mv -ccache
