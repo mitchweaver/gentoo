@@ -1,8 +1,9 @@
 # =========================================================
 # TOOLCHAIN / KERNEL
 # =========================================================
->sys-kernel/gentoo-sources-6.2.11
->sys-kernel/zen-sources-6.2.11
+# ZFS only supporting up to 6.2 as of may 2023
+>=sys-kernel/gentoo-sources-6.3.0
+>=sys-kernel/zen-sources-6.3.0
 
 # > 1.2.4 bugged for various rust/llvm packages
 # ex: https://bugs.gentoo.org/906951
@@ -43,7 +44,7 @@ net-fs/samba::gentoo
 >dev-util/bindgen-0.56.0
 
 # blacklist gentoo's mesa version to force picking up asahi's
-media-libs/mesa::gentoo
+##################media-libs/mesa::gentoo
 
 # =========================================================
 # DEBLOAT
