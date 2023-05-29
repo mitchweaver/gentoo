@@ -129,8 +129,10 @@ BDEPEND="
 
 PATCHES=(
 	# Change favorites defaults, bug #479918
-	"${FILESDIR}"/40.0-defaults.patch
-	"${FILESDIR}"/disable-telepathy-integration.patch
+	# "${FILESDIR}"/40.0-defaults.patch
+	# "${FILESDIR}"/disable-telepathy-integration.patch
+
+	# FIX FOR _DYNAMIC ON MUSL:
 	"${FILESDIR}"/gsh.patch
 )
 

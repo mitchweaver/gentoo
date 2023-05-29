@@ -39,14 +39,14 @@ mkdir -p /var/tmp/notmpfs
 CFLAGS="-O2 -pipe" USE="-lto -pgo graphite" emerge -av -1 =sys-devel/gcc-${GCC_VERSION}
 
 # rebuild libtool
-emerge --oneshot libtool
+emerge -1 libtool
 
 # clean old crap we dont need anymore
 emerge --depclean
 
 # rebuild gcc, now with lto/pgo/graphite on itself
 # warning: this will take ages
-emerge -av --newuse --oneshot =sys-devel/gcc-${GCC_VERSION}
+emerge -av --newuse -1 =sys-devel/gcc-${GCC_VERSION}
 
 # rebuild libtool again
 emerge -av --oneshot libtool

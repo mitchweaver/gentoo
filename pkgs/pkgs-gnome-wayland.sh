@@ -1,4 +1,14 @@
 #!/bin/sh -e
+#
+# install a minimal gnome environment through gnome-light
+# meaning excluding most of the junk apps that is normally included
+#
+# Note this is also WITHOUT selecting the kde profile.
+# See all my use flags in gnome.use in /etc/portage
+#
+# note: needed use flags
+#       polkit, dbus, elogind (if no systemd)
+# ========================================================================
 
 add() {
     emerge -avnuN "$@"
@@ -24,8 +34,9 @@ fi
 
 add \
     gnome-base/gnome-light \
-    gnome-base/gdm \
-    dev-libs/gjs::mitchw
+    gnome-base/gdm
+
+##############    dev-libs/gjs::mitchw
 
 confirm
 

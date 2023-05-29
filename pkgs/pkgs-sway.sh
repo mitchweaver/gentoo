@@ -13,9 +13,6 @@ add \
     gui-apps/wl-clipboard
 
 add \
-    gui-apps/mako \
-    gui-apps/grim \
-    gui-apps/slurp \
-    gui-apps/wofi \
-    x11-misc/gammastep
+    gui-apps/mako
+
 

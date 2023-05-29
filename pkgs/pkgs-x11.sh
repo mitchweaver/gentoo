@@ -31,10 +31,10 @@ add \
 # x11-misc/xbanish \
 # x11-apps/xwininfo \
 
-#add \
-#    gui-libs/display-manager-init
+add \
+    gui-libs/display-manager-init
 
-#echo 'DISPLAYMANAGER="lightdm"' > /etc/conf.d/display-manager
-#rc-update add elogind default
-#rc-update add display-manager default
+echo 'DISPLAYMANAGER="lightdm"' > /etc/conf.d/display-manager
+rc-update add elogind default
+rc-update add display-manager default
 # ==========================================================
