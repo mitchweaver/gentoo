@@ -200,12 +200,11 @@ chroot /mnt/gentoo
 
 ```
 emerge --sync
-cat >> /etc/portage/make.conf <<EOF
-MAKEOPTS=-j$(nproc)
-FEATURES="fail-clean parallel-fetch parallel-install network-sandbox ipc-sandbox userpriv userfetch compress-build-logs compressdebug nodoc noinfo -news"
-EOF
+
 emerge busybox
 ln -s $(which busybox) /bin/vi
+sed -i 's/nano/vi/g' /etc/profile
+emerge --rage-clean nano
 ```
 
 ## keywords

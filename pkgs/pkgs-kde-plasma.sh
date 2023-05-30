@@ -31,7 +31,9 @@ add \
     kde-plasma/powerdevil \
     kde-plasma/systemsettings \
     kde-plasma/kdeplasma-addons \
-    kde-plasma/xembed-sni-proxy
+    kde-plasma/xembed-sni-proxy \
+    kde-plasma/kscreen \
+    kde-apps/dolphin
 
 
 add \

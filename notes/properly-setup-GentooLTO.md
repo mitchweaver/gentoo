@@ -25,7 +25,7 @@ emerge --sync lto-overlay
 emerge --sync mv
 emerge ltoize
 
-# now uncomment make.conf.lto include in your make.conf
+# ~~~ now uncomment make.conf.lto include in your make.conf ~~~~
 # you will notice that at this point nothing will be able to compile
 # this is because you are requesting lto but toolchain is not capable of it
 
@@ -36,20 +36,18 @@ emerge --search gcc
 # (note: the change comes from ltoize, notice we are requesting
 #        -lto -pgo flags here, this is because we can't use them yet)
 mkdir -p /var/tmp/notmpfs
-CFLAGS="-O2 -pipe" USE="-lto -pgo graphite" emerge -av -1 =sys-devel/gcc-${GCC_VERSION}
+CFLAGS="-O2 -pipe" USE="-lto -pgo graphite" emerge -av -1 =sys-devel/gcc-12.2.1_p20230428-r1
 
 # rebuild libtool
 emerge -1 libtool
 
-# clean old crap we dont need anymore
-emerge --depclean
-
+# (optional, if you use lto/pgo on gcc):
 # rebuild gcc, now with lto/pgo/graphite on itself
 # warning: this will take ages
 emerge -av --newuse -1 =sys-devel/gcc-${GCC_VERSION}
 
 # rebuild libtool again
-emerge -av --oneshot libtool
+emerge -1 libtool
 
 # ltoize the world
 emerge -av --deep --with-bdeps y --keep-going @world

@@ -9,17 +9,14 @@ rc-update add sshd default
 rc-update add sysklogd default
 rc-update add cronie default
 rc-update add chronyd default
-
 rc-update add fail2ban default
-
 rc-update add cupsd default
 rc-update add bluetooth default
 rc-update add docker default
+rc-update add elogind default
 
 rc-update add display-manager default
 rc-update add dnsmasq default
-
-rc-update add elogind default
 
 useradd -m -G users,wheel,audio,video,lpadmin,input -s /bin/bash mitch
 passwd mitch
@@ -33,8 +30,6 @@ emerge --config sys-libs/timezone-data
 
 env-update
 
-emerge --rage-clean nano
-sed -i 's/nano/vi/g' /etc/profile
 EDITOR=vi visudo
 ```
 
