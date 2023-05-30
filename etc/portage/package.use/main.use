@@ -41,7 +41,6 @@ dev-libs/liborcus -spreadsheet-model
 media-libs/libsdl2 opengl gles2
 
 # jellyfin-media-player
-dev-qt/qtwebengine jumbo-build -designer -widgets
 dev-qt/qtwebchannel qml
 
 # ========= MISC =============

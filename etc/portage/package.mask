@@ -24,9 +24,9 @@
 # MUSL LIBC WORKAROUNDS
 # =========================================================
 # force usage of older elogind that is patched from the musl overlay
-sys-auth/elogind::gentoo
+###########sys-auth/elogind::gentoo
 # force usage of ::musl's samba
-net-fs/samba::gentoo
+#############net-fs/samba::gentoo
 
 # =========================================================
 # Asahi Linux
@@ -44,7 +44,7 @@ net-fs/samba::gentoo
 >dev-util/bindgen-0.56.0
 
 # blacklist gentoo's mesa version to force picking up asahi's
-##################media-libs/mesa::gentoo
+###############media-libs/mesa::gentoo
 
 # =========================================================
 # DEBLOAT
