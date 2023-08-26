@@ -3,5 +3,5 @@ sys-kernel/zen-sources -build
 sys-kernel/pf-sources -build
 
 # Asahi Linux
-sys-kernel/asahi-sources symlink
+sys-kernel/asahi-sources symlink rust
 sys-apps/kmod zstd

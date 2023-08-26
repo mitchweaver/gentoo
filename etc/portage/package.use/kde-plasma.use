@@ -2,8 +2,7 @@ kde-plasma/plasma-workspace -appstream -calendar -wallpaper-metadata
 media-libs/phonon -vlc
 kde-plasma/kdeplasma-addons -alternate-calendar
 dev-qt/qtprintsupport cups
-app-text/poppler qt5
-dev-qt/qtwebengine widgets jumbo-build -designer
+app-crypt/qca qt5
 
 # ====================================================================
 # NEED POLICYKIT / POLKIT

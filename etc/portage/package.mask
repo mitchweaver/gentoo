@@ -1,10 +1,6 @@
 # =========================================================
-# TOOLCHAIN / KERNEL
+# TOOLCHAIN
 # =========================================================
-# ZFS only supporting up to 6.2 as of may 2023
->=sys-kernel/gentoo-sources-6.3.0
->=sys-kernel/zen-sources-6.3.0
-
 # > 1.2.4 bugged for various rust/llvm packages
 # ex: https://bugs.gentoo.org/906951
 >sys-libs/musl-1.2.3-r7
@@ -15,18 +11,41 @@
 >sys-devel/binutils-2.40-r5
 >sys-devel/binutils-libs-2.40-r5
 
+>dev-lang/perl-5.36
+
+
+# =========================================================
+# KERNEL / ZFS
+# =========================================================
+# as of August 2023, latest allowed is 6.3.0
+# for musl/asahi patches/rust/bindgen/zfs to all work together
+>sys-kernel/gentoo-sources-6.3.0
+>sys-kernel/zen-sources-6.3.0
+>sys-kernel/asahi-sources-6.3.0
+>sys-fs/zfs-kmod-2.1.12
+>sys-fs/zfs-2.1.12
+
 # =========================================================
 # LIBS
 # =========================================================
-<dev-libs/openssl-3.0.8-r4
+####<dev-libs/openssl-3.0.8-r4
 
 # =========================================================
 # MUSL LIBC WORKAROUNDS
 # =========================================================
 # force usage of older elogind that is patched from the musl overlay
-###########sys-auth/elogind::gentoo
-# force usage of ::musl's samba
-#############net-fs/samba::gentoo
+sys-auth/elogind::gentoo
+
+# =========================================================
+# SAMBA
+# =========================================================
+# from musl
+net-fs/cifs-utils::musl
+# from mitchw
+>=sys-libs/tevent-0.15.0
+>=sys-libs/ldb-2.7.2
+>dev-util/cmocka-1.1.7
+# >net-fs/samba-4.14.14
 
 # =========================================================
 # Asahi Linux
@@ -36,6 +55,7 @@
 <dev-lang/rust-bin-1.66.0
 <virtual/rust-1.66.0
 # Current most updated stable rust for aarch64+musl is 1.66.1
+# as of kernel 6.2.0
 >dev-lang/rust-1.66.1-r1
 >dev-lang/rust-bin-1.66.1-r1
 >virtual/rust-1.66.1-r1
@@ -44,7 +64,7 @@
 >dev-util/bindgen-0.56.0
 
 # blacklist gentoo's mesa version to force picking up asahi's
-###############media-libs/mesa::gentoo
+media-libs/mesa::gentoo
 
 # =========================================================
 # DEBLOAT
@@ -81,6 +101,7 @@ app-text/pandoc
 */*::robertgzr
 */*::steam-overlay
 */*::src_prepare-overlay
+*/*::fyn_overlay
 # ==========================================================
 
 # vim:ft=config

@@ -5,9 +5,14 @@ sys-devel/llvm abi_x86_32
 
 dev-lang/perl minimal
 
-net-misc/nextcloud-client -dolphin -nautilus
 sys-libs/compiler-rt-sanitizers profile
 sys-apps/smartmontools -daemon -update-drivedb -caps
+
+# =====================================================================================
+# nextcloud
+# =====================================================================================
+net-misc/nextcloud-client -dolphin -nautilus
+dev-libs/qtkeychain qt5
 
 # =====================================================================================
 # Lua issues - (no jit on musl)
@@ -41,6 +46,7 @@ dev-libs/liborcus -spreadsheet-model
 media-libs/libsdl2 opengl gles2
 
 # jellyfin-media-player
+dev-qt/qtwebengine jumbo-build -designer -widgets
 dev-qt/qtwebchannel qml
 
 # ========= MISC =============

@@ -38,7 +38,6 @@ x11-misc/xbanish::guru
 sys-process/gotop::guru
 gui-wm/swayfx::guru
 dev-python/markdownify::guru
-app-misc/pfetch::guru
 
 # -*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
 # FONTS

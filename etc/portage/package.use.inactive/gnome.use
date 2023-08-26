@@ -1,11 +1,12 @@
-# ========================================================================
-# ~~~~~~~~~~~~~~~ NOTE ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-# This is as slimmed-down as I can get gnome to be
-# Note you should also be using "gnome-light" instead of gnome-meta
-#
-# This still pulls in a bunch of gnome crap even as it is, so only add this
-# to your package.use if you are actually using gnome.
-# ========================================================================
+
+# TEMP/TESTING
+gnome-extra/evolution-data-server vala
+dev-libs/libical vala
+gnome-base/librsvg vala
+
+
+
+
 
 
 # ===============================================
@@ -14,6 +15,7 @@
 gnome-base/gnome-control-center elogind -gnome-online-accounts
 sys-apps/accountsservice elogind
 gnome-base/gdm wayland elogind -audit -fprint -plymouth
+
 gnome-base/gnome-settings-daemon elogind colord
 
 # ===============================================
@@ -65,44 +67,38 @@ app-arch/gnome-autoar -gtk
 media-fonts/cantarell font_types_otf -X
 dev-libs/gdata -gnome-online-accounts
 
-# ===============================================
-# NEED VALA
-# ===============================================
-gnome-extra/evolution-data-server vala
-dev-libs/libical vala
-gnome-base/librsvg vala
+# app-accessibility/at-spi2-core     introspection
+# dev-libs/atk                       introspection
+# x11-libs/gtk+                      introspection
+# x11-libs/gdk                       introspection
+# x11-libs/pango                     introspection
+# media-libs/harfbuzz                introspection truetype
+# x11-libs/gdk-pixbuf                introspection jpeg
 
 # ===========================================
-# NEED INTROSPECTION
+# IF USING GNOME
 # ===========================================
-media-libs/harfbuzz                  introspection truetype
-x11-libs/gdk-pixbuf                  introspection jpeg
-app-accessibility/at-spi2-core       introspection
-dev-libs/atk                         introspection
-x11-libs/gtk+                        introspection
-x11-libs/gdk                         introspection
-x11-libs/pango                       introspection
-app-crypt/gcr                        introspection
-x11-wm/mutter                        introspection
-sys-auth/polkit                      introspection
-gnome-base/gsettings-desktop-schemas introspection
-sys-apps/accountsservice             introspection
-app-i18n/ibus                        introspection
-gui-libs/gtk                         introspection
-app-misc/geoclue                     introspection
-media-libs/graphene                  introspection
-net-libs/libsoup                     introspection
-sys-power/upower                     introspection
-gnome-base/librsvg                   introspection
-x11-libs/libnotify                   introspection
-dev-libs/json-glib                   introspection
-gnome-base/gnome-desktop             introspection
-gui-libs/libhandy                    introspection
-gnome-base/libgtop                   introspection
-gnome-base/gnome-menus               introspection
-gui-libs/libadwaita                  introspection
-media-libs/clutter                   introspection
-media-libs/cogl                      introspection
-dev-libs/libgweather                 introspection
-gnome-base/nautilus                  introspection
-media-libs/mesa                      introspection
+# app-crypt/gcr                        introspection
+# x11-wm/mutter                        introspection
+# sys-auth/polkit                      introspection
+# gnome-base/gsettings-desktop-schemas introspection
+# sys-apps/accountsservice             introspection
+# app-i18n/ibus                        introspection
+# gui-libs/gtk                         introspection
+# app-misc/geoclue                     introspection
+# media-libs/graphene                  introspection
+# net-libs/libsoup                     introspection
+# sys-power/upower                     introspection
+# gnome-base/librsvg                   introspection
+# x11-libs/libnotify                   introspection
+# dev-libs/json-glib                   introspection
+# gnome-base/gnome-desktop             introspection
+# gui-libs/libhandy                    introspection
+# gnome-base/libgtop                   introspection
+# gnome-base/gnome-menus               introspection
+# gui-libs/libadwaita                  introspection
+# media-libs/clutter                   introspection
+# media-libs/cogl                      introspection
+# dev-libs/libgweather                 introspection
+# gnome-base/nautilus                  introspection
+# media-libs/mesa                      introspection

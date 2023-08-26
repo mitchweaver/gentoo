@@ -6,3 +6,5 @@ x11-terms/kitty **
 x11-terms/kitty-shell-integration **
 x11-terms/kitty-terminfo **
 app-misc/ranger **
+dev-util/cmake **
+media-video/shotcut **
