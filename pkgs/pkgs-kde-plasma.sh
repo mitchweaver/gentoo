@@ -49,10 +49,6 @@ echo 'DISPLAYMANAGER="sddm"' > /etc/conf.d/display-manager
 rc-update add elogind default
 #######rc-update add display-manager default
 
-
-
-
-
 cat <<"EOF"
 =============== NOTE ======================
 If using proprietary nvidia driver,
